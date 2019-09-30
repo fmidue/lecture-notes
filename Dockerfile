@@ -22,10 +22,8 @@ RUN wget http://mirrors.ctan.org/support/rail.zip \
  && sed -i "s#TEXDIR=\$(HOME)/tex#TEXDIR=/usr/share/texmf/tex/latex/rail#;s#BINDIR=\$(HOME)/bin#BINDIR=/usr/local/bin#;s#MANDIR=\$(HOME)/man#MANDIR=/usr/share/texmf/doc/man#" Makefile \
  && make install \
  && cd / && rm -rf /tmp/rail* \
- && apt-get remove -y make gcc libc-dev bison flex unzip \
+ && apt-get remove -y gcc libc-dev bison flex unzip \
  && tlmgr init-usertree \
- && tlmgr option repository ftp://tug.org/historic/systems/texlive/2017/tlnet-final \
- && tlmgr update --all \
  && mkdir /work
 
 WORKDIR /work
