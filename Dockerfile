@@ -1,6 +1,6 @@
 FROM ubuntu:bionic
 
-LABEL Description="Image for building lecture notes (texlive + rail + fig2dev)" Vendor="Marcellus Siegburg" Version="1.0"
+LABEL Description="Image for building lecture notes (texlive + rail + fig2dev + gnuplot)" Vendor="Marcellus Siegburg" Version="1.0"
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -13,6 +13,7 @@ RUN apt-get update \
       libc-dev \
       bison \
       flex \
+      gnuplot \
       unzip
 WORKDIR /tmp
 RUN wget http://mirrors.ctan.org/support/rail.zip \
