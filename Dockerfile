@@ -1,6 +1,6 @@
-FROM ubuntu:bionic
+FROM ubuntu:focal
 
-LABEL Description="Image for building lecture notes (texlive + rail + fig2dev + gnuplot)" Vendor="Marcellus Siegburg" Version="1.0"
+LABEL Description="Image for building lecture notes (texlive + rail + fig2dev + gnuplot + pdftk + qpdf + pdfsam)" Vendor="Marcellus Siegburg" Version="1.0"
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -14,6 +14,9 @@ RUN apt-get update \
       bison \
       flex \
       gnuplot \
+      pdfsam \
+      pdftk \
+      qpdf \
       unzip
 WORKDIR /tmp
 RUN wget http://mirrors.ctan.org/support/rail.zip \
