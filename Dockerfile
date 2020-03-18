@@ -1,6 +1,6 @@
 FROM ubuntu:focal
 
-LABEL Description="Image for building lecture notes (texlive + rail + fig2dev + gnuplot + pdftk + qpdf + pdfsam)" Vendor="Marcellus Siegburg" Version="1.0"
+LABEL Description="Image for building lecture notes (texlive + rail + fig2dev + gnuplot + pdftk + qpdf)" Vendor="Marcellus Siegburg" Version="1.1"
 
 RUN apt-get update \
  && DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends \
@@ -14,7 +14,6 @@ RUN apt-get update \
       bison \
       flex \
       gnuplot \
-      pdfsam \
       pdftk \
       qpdf \
       unzip
