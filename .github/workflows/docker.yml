@@ -1,0 +1,14 @@
+name: Publish To Docker Hub
+on: [push]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@master
+    - name: Publish to Registry
+      uses: elgohr/Publish-Docker-Github-Action@f53e41d852cec2b42dec4147c971e8029f07479c
+      with:
+        name: fmidue/lecture-notes
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        snapshot: true
